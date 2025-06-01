@@ -11,7 +11,7 @@ const AllRecipes = () => {
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const result = await axios.get("http://localhost:3000/recipes");
+        const result = await axios.get(`${baseURL}/recipes`)
         setRecipes(result.data);
       } catch (error) {
         console.error("Error fetching recipes:", error);
@@ -25,7 +25,7 @@ const AllRecipes = () => {
   const handleDelete = async (id) => {
     alert("This recipe will be permanently deleted!")
     try {
-      await axios.delete(`http://localhost:3000/recipes/${id}`);//Delete recipe of id
+      await axios.delete(`${baseURL}/recipes/${id}`);//Delete recipe of id
       setRecipes((prev) => prev.filter((recipe) => recipe.id !== id));//Update recipes array with data otherthan deleted recipe
     } catch (error) {
       console.error("Error:", error);

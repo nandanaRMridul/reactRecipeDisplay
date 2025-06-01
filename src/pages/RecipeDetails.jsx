@@ -11,7 +11,7 @@ const RecipeDetails = () => {
     const fetchRecipe = async () => {
       //Async fetch fn with try catch
       try {
-        const result = await axios.get(`http://localhost:3000/recipes/${id}`);
+        const result = await axios.get(`${baseURL}/recipes/${id}`);
         setRecipe(result.data);
       } catch (err) {
         console.error("Error fetching recipe:", err);
@@ -57,11 +57,9 @@ const RecipeDetails = () => {
             📃Steps:
           </h2>
           <ol className="list-decimal list-inside">
-            {recipe.steps.map(
-              (step, index) => (
-                <li key={index}> {step}</li>
-              )
-            )}
+            {recipe.steps.map((step, index) => (
+              <li key={index}> {step}</li>
+            ))}
           </ol>
         </div>
       </div>

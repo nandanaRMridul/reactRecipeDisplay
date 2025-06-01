@@ -28,7 +28,7 @@ const AddRecipes = () => {
   useEffect(() => {
     if (id) {
       //If id is recieved as params, load data of that id from recipes array (for editing)
-      axios.get(`http://localhost:3000/recipes/${id}`).then((res) => {
+      axios.get(`${baseURL}/recipes/${id}`).then((res) => {
         const recipeData = res.data;
         setRecipeData({
           title: recipeData.title,
@@ -62,10 +62,10 @@ const AddRecipes = () => {
 
     //If id recieved as params - edit data, else add formatted data to recipes array
     if (id) {
-      await axios.put(`http://localhost:3000/recipes/${id}`, formattedData);
+      await axios.put(`${baseURL}/recipes/${id}`, formattedData);
       alert("Recipe updated successfully");
     } else {
-      await axios.post("http://localhost:3000/recipes", formattedData);
+      await axios.post(`${baseURL}/recipes`, formattedData);
       alert("Recipe added successfully");
     }
 
