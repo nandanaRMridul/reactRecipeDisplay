@@ -1,1 +1,1 @@
-const baseURL = "https://rdserver.onrender.com";
+export const baseURL = "https://rdserver.onrender.com";
