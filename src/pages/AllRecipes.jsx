@@ -40,7 +40,7 @@ const AllRecipes = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[url(assets/recipe-img.jpg)] bg-cover bg-center p-6 flex flex-col items-center justify-center text-center">
+    <div className="min-h-screen bg-[url(assets/recipe-img.jpg)] bg-cover bg-center p-6 flex flex-col items-center justify-center text-center pb-20">
       <h1 className="text-3xl font-bold text-center max-w-sm lg:max-w-full border-0 shadow-md px-8 py-3 rounded-2xl m-4 bg-white ">
         🍽️ All Recipes
       </h1>
@@ -48,7 +48,7 @@ const AllRecipes = () => {
         {recipes.map((recipe, index) => (
           <div
             key={index}
-            className="max-w-sm w-100 lg:max-w-full border-0 px-8 py-8 m-4 bg-white rounded-lg shadow-lg backdrop-invert backdrop-opacity-10 transition-transform hover:scale-101"
+            className="max-w-sm w-100 lg:max-w-full border-0 px-8 py-8 m-4 bg-white/87 rounded-lg shadow-lg  transition-transform hover:scale-101 text-justify"
           >
             <Link to={`/recipes/${recipe.id}`}>
               {/* Image */}
@@ -58,7 +58,7 @@ const AllRecipes = () => {
                 className="w-full h-48 object-cover rounded-md mb-4"
               />
               {/* Title */}
-              <h2 className="text-gray-900 font-bold text-xl mb-2">
+              <h2 className="text-gray-900 font-bold text-xl mb-2 text-center">
                 {recipe.title}
               </h2>
               {/* Description */}

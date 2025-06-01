@@ -56,8 +56,10 @@ const AddRecipes = () => {
     const formattedData = {
       //Formatting ingredients, steps as array items
       ...recipeData,
-      ingredients: recipeData.ingredients.split(",").filter((item) => item),
-      steps: recipeData.steps.split(".").filter((item) => item),
+      ingredients: typeof recipeData.ingredients === "string"
+      ?recipeData.ingredients:  recipeData.ingredients.join(","),
+      steps: typeof recipeData.steps === "string"
+      ?recipeData.steps:  recipeData.steps.join("."),
     };
 
     //If id recieved as params - edit data, else add formatted data to recipes array
